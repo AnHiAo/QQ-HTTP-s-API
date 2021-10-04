@@ -1,6 +1,7 @@
 # QQhttp(s)API接口整合
-1.检查指定QQ是否在线(无视隐身状态)<br/>
-`POST`
+<details>
+ <summary>检查指定QQ是否在线(无视隐身状态)<img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/580168a9-02a9-4849-8446-d6e9b776143f.svg" width="33.333333vw"/></summary>
+ `POST`
 `https://find.qq.com/proxy/domain/cgi.find.qq.com/qqfind/buddy/search_v3`<br/><br/>
 `Headers`<br/>
 <pre>
@@ -21,7 +22,8 @@
 
 
 
-`Data`这里采用的是将对应的` key:value `的数据转换为` key1=value1&key2=value2 `<br/>
+`Data`   （这里采用的是将对应的` key:value ` -->` key1=value1&key2=value2 `）<br/>
+
 <pre>
  "num":"20",
  "page":"0",
@@ -40,5 +42,14 @@
  "ldw":"2144551309"
 </pre>
 
-`Response` 如果没在线或者Cookie失效的话返回`{'retcode': 0, 'result': None}`<br/>
-在线的时候返回`{'retcode': 0, 'result': {'sret': 0, 'exact': 0, 'buddy': {'info_list': [{'uin': '10001', 'nick': 'Pony', 'country': '在深圳', 'province': '', 'city': '', 'gender': 1, 'age': 120, 'url': 'http://thirdqq.qlogo.cn/g?b=oidb&k=ue9m0Xcttd9Yfu065rGBIw&s=100&t1612053871'}], 'exact': '', 'sessionid': 0}, 'qidian': None, 'qiye': None}}`
+`Response` <br/>
+如果 没在线或者`Cookie`失效、对方`发现我的方式`关闭了`通过QQ号发现`<br/>
+
+`{'retcode': 0, 'result': None}`
+
+在线<br/>
+
+`{'retcode': 0, 'result': {'sret': 0, 'exact': 0, 'buddy': {'info_list': [{'uin': '10001', 'nick': 'Pony', 'country': '在深圳', 'province': '', 'city': '', 'gender': 1, 'age': 120, 'url': 'http://thirdqq.qlogo.cn/g?b=oidb&k=ue9m0Xcttd9Yfu065rGBIw&s=100&t1612053871'}], 'exact': '', 'sessionid': 0}, 'qidian': None, 'qiye': None}}`
+
+</details>
+
