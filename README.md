@@ -1,10 +1,14 @@
 # QQhttp(s)API接口整合
 <details>
  <summary>检查指定QQ是否在线(无视隐身状态)<img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/580168a9-02a9-4849-8446-d6e9b776143f.svg" width="33.333333vw"/></summary>
- `POST`
-`https://find.qq.com/proxy/domain/cgi.find.qq.com/qqfind/buddy/search_v3`<br/><br/>
-`Headers`<br/>
-<pre>
+ <p>
+ <pre> POST  https://find.qq.com/proxy/domain/cgi.find.qq.com/qqfind/buddy/search_v3</pre>
+ <br/>
+ 
+`Headers`
+ <br/>
+
+ <pre>
  "Host": "find.qq.com",
  "Connection": "keep-alive",
  "Content-Length": "182",
@@ -50,6 +54,6 @@
 在线<br/>
 
 `{'retcode': 0, 'result': {'sret': 0, 'exact': 0, 'buddy': {'info_list': [{'uin': '10001', 'nick': 'Pony', 'country': '在深圳', 'province': '', 'city': '', 'gender': 1, 'age': 120, 'url': 'http://thirdqq.qlogo.cn/g?b=oidb&k=ue9m0Xcttd9Yfu065rGBIw&s=100&t1612053871'}], 'exact': '', 'sessionid': 0}, 'qidian': None, 'qiye': None}}`
-
+</p>
 </details>
 
