@@ -212,7 +212,7 @@
  <br/>
 </details>
 <details>
- <summary>qun.qq.com QQ群集合 </summary>
+ <summary>qun.qq.com QQ群集合<img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/> </summary>
  <table>
   <tr>
   <th>name</th>
