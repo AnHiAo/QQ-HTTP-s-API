@@ -2,7 +2,7 @@
 ## 简介
 
 <p>嘛,如果你能发现到这里就说明你对作者还是有大大滴关注,那么如果在您使用的基础上觉得好用并且想 <strong>分享</strong>其他地方
-麻烦带上<strong>本仓库地址</strong><img src="https://tx-free-imgs2.acfun.cn/kimg/bs2/zt-image-host/ChYwOGJkOGZhYzRjMTBmN2JkODhiYzA1EIjM1y8.gif" /></p>
+麻烦带上<strong>本仓库地址</strong><img src="https://pic.stackoverflow.wiki/uploadImages/58/152/85/120/2021/10/14/21/28/0b4f0ba0-ce29-4ef7-86a5-069862c25526.gif" /></p>
 
 
 <details>
