@@ -1,6 +1,12 @@
 # QQhttp(s)API接口整合
+## 简介
+
+<p>嘛,如果你能发现到这里就说明你对作者还是有大大滴关注,那么如果在您使用的基础上觉得好用并且想 <strong>分享</strong>其他地方
+麻烦带上<strong>本仓库地址</strong><img src="https://tx-free-imgs2.acfun.cn/kimg/bs2/zt-image-host/ChYwOGJkOGZhYzRjMTBmN2JkODhiYzA1EIjM1y8.gif" /></p>
+
+
 <details>
- <summary>检查指定QQ是否在线(无视隐身状态)<img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/580168a9-02a9-4849-8446-d6e9b776143f.svg" width="26.6666666vw"/></summary>
+ <summary>find.qq.com 检查指定QQ是否在线(无视隐身状态)<img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/580168a9-02a9-4849-8446-d6e9b776143f.svg" width="26.6666666vw"/></summary>
  <p>
  <pre> POST  https://find.qq.com/proxy/domain/cgi.find.qq.com/qqfind/buddy/search_v3</pre>
  <br/>
@@ -57,3 +63,148 @@
 </p>
 </details>
 
+<details>
+ <summary>id.qq.com 我的QQ中心<img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></summary>
+
+ <table>
+ <tr>
+  <th>name</th>
+  <th>url</th>
+  <th>stage</th>
+  </tr>
+  
+  <tr>
+   <tr>
+    <td>get_base_key(获取ldw值)</td>
+    <td>https://id.qq.com/cgi-bin/get_base_key?r=随机小数(0-1)</td>
+    <td>
+    <details>
+            <summary>例</summary>
+            例:<br/>
+            GET<pre>https://id.qq.com/cgi-bin/get_base_key?r=0.5524111020965228</pre>
+            headers
+            <pre>
+   "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,  like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+    "Referer": "https://id.qq.com",
+    "Cookie": "  uin=o0123456; skey=@NYPUcpjXh; p_uin=o0123456;           p_skey=oNmCDeKR8b8rcOpkVPIzR9CAjjj7t-bUxsynqAkalWI_; "
+     // 需要修改 uin=o0你的QQ号 skey=自行cookie提取 p_uin=o0你的QQ号 p_skey=自行cookie提取 
+            </pre>
+            result(该项提取 <mark>header</mark> 里面的 <mark>set-cookie</mark> )
+            <pre>
+            'set-cookie': 'ldw=7841f781c7f0e7f7acbdd00d53a5f53fa5f0a63d40a0969d; Domain=id.qq.com; Path=/'
+            </pre>
+    </details>
+    </td>
+  </tr>
+  </tr>
+  <tr>
+   <td>获取QQ成长信息</td>
+   <td>https://id.qq.com/cgi-bin/qqlevel?page_type=1&idw=(get_base_key提取出来的值)&r=随机小数(0-1)</td>
+   <td>
+       <details>
+           <summary>例</summary>
+         GET<pre>https://id.qq.com/cgi-bin/qqlevel?page_type=1&idw=(get_base_key提取出来的值)&r=0.9265129733481445</pre>
+         headers
+         <pre>
+           "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+        "Referer": "https://id.qq.com",
+        "Cookie": `uin=o0123456; skey=@NYPUcpjXh; RK=xcDMmgj+OJ; p_uin=o0123456; p_skey=oNmCDeKR8b8rcOpkVPIzR9CAjjj7t-bUxsynqAkalWI_;ldw=c8cf578ba618815d667dc29e9d9e77459c037f69543f62fb;`
+        // 需要修改 uin=o0你的QQ号 skey=自行cookie提取 p_uin=o0你的QQ号 p_skey=自行cookie提取   ldw=(get_base_key提取出来的值)
+         </pre>
+         result
+        <pre style="height:33.333vh;overflow:auto;">
+              {
+        	"PCMgr": {
+        		"cur": 0,
+        		"speed": "1"
+        	},
+        	"QQVipLevel": 0,
+        	"QQVipSpeed": "1.0",
+        	"QQVipYear": 0,
+        	"QplusOnlineTimes": 0,
+        	"TYQQCard": {
+        		"cur": 0,
+        		"speed": "0.2"
+        	},
+        	"chargeTel": {
+        		"cur": 0,
+        		"speed": "0.5"
+        	}, 
+        	"chat": {
+        		"cur": 0,
+        		"speed": "0.1",
+        		"total": 5
+        	},
+        	"days": 6245, // QQ活跃天数days
+        	"ec": 0,
+        	"isDaren": 0,
+        	"isQQVip": 0, // 是否QQ会员
+        	"isSuperQQ": 0,  //是否超级QQ
+        	"isSuperVip": 0, // 是否超级会员
+        	"latesVersion": {
+        		"cur": 0,
+        		"speed": "0.1"
+        	},
+        	"level": 77, // QQ等级
+        	"login": {
+        		"cur": 0,
+        		"speed": "0.1",
+        		"total": 6
+        	},
+        	"medal": {
+        		"cur": 0,
+        		"speed": "0.2"
+        	},
+        	"msg": {
+        		"cur": 0,
+        		"speed": "0.1",
+        		"total": 50
+        	},
+        	"onlineTimes": 0,
+        	"onlineTotalTimes": 0,
+        	"pinyin": {
+        		"cur": 0,
+        		"speed": "0.1"
+        	},
+        	"qplus": {
+        		"cur": 0,
+        		"speed": "0.1",
+        		"total": 5
+        	},
+        	"remainDays": 151, // "距升级到 (当前等级 + 1) 级原需要 (remainDays) 天
+        	"shouQ": { 
+        		"onlineTimes": 58291, // 已连续在线(onlineTimes / 3600) -->四舍五入取时间
+        		"speedRule": 1
+        	},
+        	"superQQLevel": 0,
+        	"superQQMqing": 0,
+        	"superQQRealSpeed": "0.0",
+        	"superQQSpeed": "0.0",
+        	"superQQYear": 0,
+        	"superVipBasicSpeed": 0, //超级会员的成长速度
+        	"visible": {   // 非隐身在线数据
+        		"cur": 124,
+        		"invisible": 0,
+        		"speed": "0.2",
+        		"total": 120
+        	},
+        	"weibo": {
+        		"cur": 0,
+        		"level": 0,
+        		"speed": "0.1"
+        	},
+        	"xiaochu": {
+        		"cur": 0,
+        		"speed": "0.2"
+        	}
+        }
+        </pre>
+       </details>
+   </td>
+  </tr>
+ </table>
+ 
+    
+
+ <br/>
+</details>
