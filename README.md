@@ -211,3 +211,28 @@
 
  <br/>
 </details>
+<details>
+ <summary>qun.qq.com QQ群集合 </summary>
+ <table>
+  <tr>
+  <th>name</th>
+  <th>url</th>
+  <th>stage</th>
+  </tr>
+  <tr>
+   </tr>
+  <tr>
+   <td>获取群列表</td>
+   <td>https://qun.qq.com/cgi-bin/qun_mgr/get_group_list?bkn=获取bkn值<br/>
+    也可以通过 <strong>cookie</strong> 的 <strong>skey</strong> 值通过运算出 <strong>bkn值</strong>
+   <img src="https://pic.stackoverflow.wiki/uploadImages/218/18/112/68/2021/10/15/04/21/76cb0a3a-5c39-493c-b104-9d56b194abe7.png" />
+   </td>
+   <td>
+    <details>
+     <summary>施工中...</summary>
+    </details>
+   </td>
+  </tr>
+ 
+ </table>
+</details>
