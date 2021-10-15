@@ -223,13 +223,19 @@
   <th>stage</th>
   </tr>
   <tr>
-   </tr>
+	 </tr>
+	 <tr>
+		 <td>获取bkn值(使用<strong>cookie</strong> 的 <strong>skey</strong>手动算出)</td>
+		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/218/18/112/68/2021/10/15/04/21/76cb0a3a-5c39-493c-b104-9d56b194abe7.png"  /></td>
+		 <td><details><summary>例</summary></details></td>
+	 </tr>
+	 <tr>
+	 </tr>
   <tr>
    <td>获取群列表</td>
    <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
-   <td>https://qun.qq.com/cgi-bin/qun_mgr/get_group_list?bkn=获取bkn值<br/>
-    也可以通过 <strong>cookie</strong> 的 <strong>skey</strong> 值通过运算出 <strong>bkn值</strong>
-   <img src="https://pic.stackoverflow.wiki/uploadImages/218/18/112/68/2021/10/15/04/21/76cb0a3a-5c39-493c-b104-9d56b194abe7.png"  />
+   <td>https://qun.qq.com/cgi-bin/qun_mgr/get_group_list?bkn=(bkn值)
    </td>
    <td>
     <details>
