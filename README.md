@@ -5,7 +5,7 @@
 麻烦带上<strong>本仓库地址</strong><img src="https://pic.stackoverflow.wiki/uploadImages/58/152/85/120/2021/10/14/21/28/0b4f0ba0-ce29-4ef7-86a5-069862c25526.gif" /></p>
 
 
-<details>
+<details >
  <summary>find.qq.com检查指定QQ是否在线(该项暂时停止)<img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/580168a9-02a9-4849-8446-d6e9b776143f.svg" width="26.6666666vw"/></summary>
  <p>
  <pre> POST  https://find.qq.com/proxy/domain/cgi.find.qq.com/qqfind/buddy/search_v3</pre>
@@ -264,6 +264,218 @@
     </details>
    </td>
   </tr>
- 
+	 <tr></tr>
+  <tr>
+	  <td>获取指定群的<strong>详细信息</strong></td>
+	  <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+	  <td>https://qinfo.clt.qq.com/cgi-bin/qun_info/get_group_info_all?gc=(QQ群号)&bkn=(bkn值)</td>
+	  <td><details>
+		  <summary>例</summary>
+		  GET<pre>https://qinfo.clt.qq.com/cgi-bin/qun_info/get_group_info_all?gc=114514114514&bkn=1841247401</pre>
+		  headers
+		  <pre>
+ "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+ "Referer": "https://qinfo.clt.qq.com/qinfo_v3/member.html?groupuin=",
+ "Cookie": `uin=o114514; skey=MHcvBvCHdT; p_uin=o114514; p_skey=0yJENlMiruFp8XCoHvgi267qbg9j60o65N6gVrJm2Cs_;`,
+  // p_uin、uin=o你的QQ号 skey、p_skey自行提取
+		  </pre>
+		  result
+		  <pre>
+{
+    "ec": 0,
+    "errcode": 0,
+    "em": "",
+    "gc": 114514114514, // QQ群号
+    "gBoard": "",
+    "gOwner": 114514, // QQ群主号
+    "gName": "先辈 ~ !", // QQ群名
+    "gMemNum": 4, // QQ群成员数
+    "gMaxMem": 200, // QQ群最多成员数
+    "gLevel": 0, // QQ群活跃等级
+    "gCrtTime": 1617205505,
+    "gSpeClass": 0,
+    "classID": 34,
+    "flag": 3,
+    "gtype": 0,
+    "ac_grade": 0,
+    "ac_num": 3,
+    "class": "",
+    "gIntro": "",
+    "gRIntro": "",
+    "conf_mGFace": 1,
+    "conf_mGName": "1",
+    "pos": "0|0.000000|0.000000|",
+    "app_privilege_flag": 67698880,
+    "search": 0,
+    "auth": 0,
+    "open": 0,
+    "photo": {
+        "f": 0
+    },
+    "share": {
+        "f": 0
+    },
+    "edu": 0,
+    "gAdmins": [ // QQ群管理账号列表
+        114514114514,
+        114514514,
+        114114514
+    ],
+    "ns": {    //群管理和群主混合数据 (账号:昵称)
+        "114514114514": "先辈先辈",
+        "114514514": "先辈辈",
+        "114114514": "先先辈",
+        "114514": "先辈"
+    },
+    "levelname": { // 群等级制度
+        "lvln1": "潜水",
+        "lvln2": "冒泡",
+        "lvln3": "吐槽",
+        "lvln4": "活跃",
+        "lvln5": "话唠",
+        "lvln6": "传说",
+        "lvln101": "LV.1",
+        "lvln102": "LV.2",
+        "lvln103": "LV.3",
+        "lvln104": "LV.4",
+        "lvln105": "LV.5",
+        "lvln106": "LV.6",
+        "lvln107": "LV.7",
+        "lvln108": "LV.8",
+        "lvln109": "LV.9",
+        "lvln110": "LV.10",
+        "lvln111": "LV.11",
+        "lvln112": "LV.12",
+        "lvln113": "LV.13",
+        "lvln114": "LV.14",
+        "lvln115": "LV.15",
+        "lvln116": "LV.16",
+        "lvln117": "LV.17",
+        "lvln118": "LV.18",
+        "lvln197": "小酋长",
+        "lvln198": "大酋长",
+        "lvln199": "首席酋长",
+        "lvln10": "一见倾心",
+        "lvln11": "超凡脱俗",
+        "lvln12": "风华绝代",
+        "lvln13": "崭露头角",
+        "lvln14": "金玉满堂",
+        "lvln15": "富甲一方"
+    },
+    "level_def": 0,
+    "user_show": 1,
+    "sys_show": 1,
+    "tags": ""
+}
+		  </pre>
+	 </details></td>
+	 </tr><tr></tr>
+	 <tr>
+		 <td>获取群成员群操作时间等配置</td>
+		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+		 <td>https://qinfo.clt.qq.com/cgi-bin/qun_info/get_members_info_v1?gc=(QQ群号)&bkn=(bkn值)</td>
+		 <td><details><summary>例</summary>
+			 GET<pre>https://qinfo.clt.qq.com/cgi-bin/qun_info/get_members_info_v1?gc=114514114&bkn=1841247402</pre>
+			 headers
+			 <pre>
+ "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+ "Referer": "https://qinfo.clt.qq.com/qinfo_v3/member.html?groupuin=",
+ "Cookie": `uin=o114514; skey=MHcvBvCHdT; p_uin=o114514; p_skey=0yJENlMiruFp8XCoHvgi267qbg9j60o65N6gVrJm2Cs_;`,
+ // p_uin、uin=o你的QQ号 skey、p_skey自行提取
+			 </pre>
+			 result
+			 <pre>
+			 {
+    "ec": 0,
+    "errcode": 0,
+    "em": "",
+    "c": "16 32 45 51 62 ",
+    "ext_num": 0,
+    "level": 0,
+    "mem_num": 4, // 群成员数量
+    "max_num": 200, // 群成员最大数量
+    "max_admin": 10, // 群管理最大数量
+    "owner": 2274671088,
+    "adm": [  // 群的绿帽子们(滑稽)
+        114514114,
+        114514114514,
+        114514114514114
+    ],
+    "members": { 
+     		 // lst 最后一次在群里发言时间(该使用了标准10位时间戳,转换时间需要乘以1000)
+		 // jt 入群的时间(该使用了标准10位时间戳,转换时间需要乘以1000)
+		 // 剩下其余参数不清楚 后期补全
+        "114514": {
+            "lst": 1634322548,
+            "jt": 1617205505,
+            "rm": 1,
+            "lad": 30,
+            "lp": 522,
+            "ll": 3
+        },
+        "114514114": {
+            "lst": 1628307654,
+            "jt": 1618410450,
+            "rm": 1,
+            "lad": 9,
+            "lp": 139,
+            "ll": 2
+        },
+        "114514114514": {
+            "lst": 1634220941,
+            "jt": 1617205505,
+            "rm": 1,
+            "lad": 17,
+            "lp": 269,
+            "ll": 2
+        },
+        "114514114514114": {
+            "lst": 1634298294,
+            "jt": 1617205505,
+            "rm": 0,
+            "lad": 30,
+            "lp": 505,
+            "ll": 2
+        }
+    },
+    "levelname": { // 群等级配置
+        "lvln1": "潜水",
+        "lvln2": "冒泡",
+        "lvln3": "吐槽",
+        "lvln4": "活跃",
+        "lvln5": "话唠",
+        "lvln6": "传说",
+        "lvln101": "LV.1",
+        "lvln102": "LV.2",
+        "lvln103": "LV.3",
+        "lvln104": "LV.4",
+        "lvln105": "LV.5",
+        "lvln106": "LV.6",
+        "lvln107": "LV.7",
+        "lvln108": "LV.8",
+        "lvln109": "LV.9",
+        "lvln110": "LV.10",
+        "lvln111": "LV.11",
+        "lvln112": "LV.12",
+        "lvln113": "LV.13",
+        "lvln114": "LV.14",
+        "lvln115": "LV.15",
+        "lvln116": "LV.16",
+        "lvln117": "LV.17",
+        "lvln118": "LV.18",
+        "lvln197": "小酋长",
+        "lvln198": "大酋长",
+        "lvln199": "首席酋长",
+        "lvln10": "一见倾心",
+        "lvln11": "超凡脱俗",
+        "lvln12": "风华绝代",
+        "lvln13": "崭露头角",
+        "lvln14": "金玉满堂",
+        "lvln15": "富甲一方"
+    }
+}
+			 </pre>
+	         </details></td>
+	 </tr>
  </table>
 </details>
