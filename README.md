@@ -6,7 +6,7 @@
 
 
 <details>
- <summary>find.qq.com 检查指定QQ是否在线(暂时停止更新)<img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/580168a9-02a9-4849-8446-d6e9b776143f.svg" width="26.6666666vw"/></summary>
+ <summary>find.qq.com 检查指定QQ是否在线(该项暂时停止)<img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/580168a9-02a9-4849-8446-d6e9b776143f.svg" width="26.6666666vw"/></summary>
  <p>
  <pre> POST  https://find.qq.com/proxy/domain/cgi.find.qq.com/qqfind/buddy/search_v3</pre>
  <br/>
