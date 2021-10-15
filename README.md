@@ -64,7 +64,7 @@
 </details>
 
 <details>
- <summary>id.qq.com 我的QQ中心<img src="https://pic.stackoverflow.wiki/uploadImages/2400/8902//f03c/92ff/fec3/ed69/2021/10/16/03/16/10934a21-4da7-4e7c-8125-c41cd1e84ac4.svg" width="33.3333vw" /></summary>
+ <summary>id.qq.com QQ个人中心<img src="https://pic.stackoverflow.wiki/uploadImages/2400/8902//f03c/92ff/fec3/ed69/2021/10/16/03/16/10934a21-4da7-4e7c-8125-c41cd1e84ac4.svg" width="33.3333vw" /></summary>
 
  <table>
  <tr>
