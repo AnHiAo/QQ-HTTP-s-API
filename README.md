@@ -242,6 +242,7 @@
  "Cookie": `uin=o114514; skey=MHcvBvCHdT; p_uin=o114514; p_skey=0yJENlMiruFp8XCoHvgi267qbg9j60o65N6gVrJm2Cs_;`,
   // p_uin、uin=o你的QQ号 skey、p_skey自行提取
      </pre>
+     result
      <pre>
  {
 "ec": 0,
