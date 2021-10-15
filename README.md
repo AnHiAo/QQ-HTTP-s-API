@@ -371,7 +371,7 @@
 	 </details></td>
 	 </tr><tr></tr>
 	 <tr>
-		 <td>获取群成员群操作时间等配置</td>
+		 <td>获取群成员群<strong>操作时间</strong>等配置</td>
 		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
 		 <td>https://qinfo.clt.qq.com/cgi-bin/qun_info/get_members_info_v1?gc=(QQ群号)&bkn=(bkn值)</td>
 		 <td><details><summary>例</summary>
