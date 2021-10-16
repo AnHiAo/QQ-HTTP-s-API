@@ -222,6 +222,32 @@
   <th>url</th>
   <th>stage</th>
   </tr>
+	 <tr></tr>
+	 <tr>
+		 <td>get_join_k(k值)</td>
+		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+		 <td>https://qun.qq.com/proxy/domain/admin.qun.qq.com/cgi-bin/qun_admin/get_join_k</td>
+		 <td><details><summary>例</summary>
+			 POST<pre>https://qun.qq.com/proxy/domain/admin.qun.qq.com/cgi-bin/qun_admin/get_join_k</pre>
+			 headers
+			 <pre>
+ "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+ "Referer": "https://qun.qq.com/join.html",
+ "Cookie": `uin=o114514; skey=MHcvBvCHdT; p_uin=o114514; p_skey=0yJENlMiruFp8XCoHvgi267qbg9j60o65N6gVrJm2Cs_;`,
+   // p_uin、uin=o你的QQ号 skey、p_skey自行提取
+			 </pre>
+			 data
+			 <pre>
+			 gc=114514114&bkn=714093860
+			 // gc QQ群号
+			 // bkn 获取bkn值
+			 </pre>
+			 result
+			 <pre>
+			 {"ec":0,"errcode":0,"em":"","k":"TemikiPyqA7GFiyMlGv4pC6gAfYIrIs"} //k值
+			 </pre>
+			 </details></td>
+	 </tr>
   <tr>
 	 </tr>
 	 <tr>
@@ -476,6 +502,49 @@
 }
 			 </pre>
 	         </details></td>
+	 </tr>
+	 <tr></tr>
+	 <tr>
+		 <td>获取个人好友信息列表</td>
+		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+		 <td>https://qun.qq.com/cgi-bin/qun_mgr/get_friend_list?&bkn=(bkn值)</td>
+		 <td><details><summary>例</summary>
+			 GET<pre>https://qun.qq.com/cgi-bin/qun_mgr/get_friend_list?&bkn=714093871</pre>
+			 headers
+			 <pre>
+ "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+ "Referer": "https://qun.qq.com/cgi-bin/qun_mgr/get_friend_list",
+ "Cookie": `uin=o114514; skey=MHcvBvCHdT; p_uin=o114514; p_skey=0yJENlMiruFp8XCoHvgi267qbg9j60o65N6gVrJm2Cs_;`,
+ // p_uin、uin=o你的QQ号 skey、p_skey自行提取
+			 </pre>
+			 result
+			 <pre>
+ {
+	"ec": 0,
+	"errcode": 0,
+	"em": "",
+	"result": {
+	    "0": {
+		"mems": [{  // name 昵称 uin QQ号
+			"name": "babyQ",
+			"uin": 66600000
+			}]
+			
+		}
+	}
+}
+			 </pre>
+	 </details>
+		 </td>
+	 </tr>
+	 <tr></tr>
+	 <tr>
+		 <td>获取<strong>指定QQ群</strong>加群链接</td>
+		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+		 <td>https://qm.qq.com/cgi-bin/qm/qr?k=(获取get_join_k的值)&jump_from=webapi</td>
+		 <td><details><summary>例</summary>
+			 GET<pre>https://qm.qq.com/cgi-bin/qm/qr?k=TemikiPyqA7GFiyMlGv4pC6gAfYIrIs&jump_from=webapi //这里的k值是不存在的所以自然跳转不了加群</pre>	 
+			 </details></td>
 	 </tr>
  </table>
 </details>
