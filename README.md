@@ -8,7 +8,75 @@
 <p>嘛,如果你能发现到这里就说明你对作者还是有大大滴关注,那么如果在您使用的基础上觉得好用并且想 <strong>分享</strong>其他地方
 麻烦带上<strong>本仓库地址</strong><img src="https://pic.stackoverflow.wiki/uploadImages/58/152/85/120/2021/10/14/21/28/0b4f0ba0-ce29-4ef7-86a5-069862c25526.gif" /></p>
 
-
+<details><summary>公共关键值操作<img src="https://pic.stackoverflow.wiki/uploadImages/58/152/85/187/2021/10/16/16/12/a1101de2-47d9-4f28-984d-5985ebb8aa6a.svg" width="33.33vw" /></summary>
+<table>
+	<tr>
+	  <th>name</th>
+  <th>status</th>
+  <th>url</th>
+  <th>stage</th>
+	</tr>
+	<tr></tr>
+	<tr>
+    <td>get_base_key(ldw值)</td>
+    <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+    <td>https://id.qq.com/cgi-bin/get_base_key?r=随机小数(0-1)</td>
+    <td>
+    <details>
+     <summary>例</summary>
+            GET<pre>https://id.qq.com/cgi-bin/get_base_key?r=0.5524111020965228</pre>
+            headers
+            <pre>
+   "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,  like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+    "Referer": "https://id.qq.com",
+    "Cookie": "  uin=o0123456; skey=@NYPUcpjXh; p_uin=o0123456;           p_skey=oNmCDeKR8b8rcOpkVPIzR9CAjjj7t-bUxsynqAkalWI_; "
+     // 需要修改 uin=o0你的QQ号 skey=自行cookie提取 p_uin=o0你的QQ号 p_skey=自行cookie提取 
+            </pre>
+            result(该项提取 <mark>header</mark> 里面的 <mark>set-cookie</mark> )
+            <pre>
+            'set-cookie': 'ldw=7841f781c7f0e7f7acbdd00d53a5f53fa5f0a63d40a0969d; Domain=id.qq.com; Path=/'
+            </pre>
+    </details>
+    </td>
+  
+  </tr>
+	<tr>
+		 <td>get_join_k(k值)</td>
+		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+		 <td>https://qun.qq.com/proxy/domain/admin.qun.qq.com/cgi-bin/qun_admin/get_join_k</td>
+		 <td><details><summary>例</summary>
+			 POST<pre>https://qun.qq.com/proxy/domain/admin.qun.qq.com/cgi-bin/qun_admin/get_join_k</pre>
+			 headers
+			 <pre>
+ "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+ "Referer": "https://qun.qq.com/join.html",
+ "Cookie": `uin=o114514; skey=MHcvBvCHdT; p_uin=o114514; p_skey=0yJENlMiruFp8XCoHvgi267qbg9j60o65N6gVrJm2Cs_;`,
+   // p_uin、uin=o你的QQ号 skey、p_skey自行提取
+			 </pre>
+			 data
+			 <pre>
+			 gc=114514114&bkn=714093860
+			 // gc QQ群号
+			 // bkn 获取bkn值
+			 </pre>
+			 result
+			 <pre>
+			 {"ec":0,"errcode":0,"em":"","k":"TemikiPyqA7GFiyMlGv4pC6gAfYIrIs"} //k值
+			 </pre>
+			 </details></td>
+	 </tr>
+  <tr>
+	 </tr>
+	 <tr>
+		 <td>getCSRFToken(使用<strong>cookie</strong> 的 <strong>skey</strong>手动算出<strong>bkn值</strong>)</td>
+		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/218/18/112/68/2021/10/15/04/21/76cb0a3a-5c39-493c-b104-9d56b194abe7.png"  /></td>
+		 <td><details><summary>例</summary></details></td>
+	 </tr>
+	</table>
+</details>
+	
+	
 <details >
  <summary>find.qq.com检查指定QQ是否在线(该项暂时停止)<img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/580168a9-02a9-4849-8446-d6e9b776143f.svg" width="26.6666666vw"/></summary>
  <p>
@@ -80,31 +148,8 @@
   
   <tr>
    </tr>
-   <tr>
-    <td>get_base_key(ldw值)</td>
-    <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
-    <td>https://id.qq.com/cgi-bin/get_base_key?r=随机小数(0-1)</td>
-    <td>
-    <details>
-     <summary>例</summary>
-            GET<pre>https://id.qq.com/cgi-bin/get_base_key?r=0.5524111020965228</pre>
-            headers
-            <pre>
-   "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,  like Gecko) Chrome/94.0.4606.81 Safari/537.36',
-    "Referer": "https://id.qq.com",
-    "Cookie": "  uin=o0123456; skey=@NYPUcpjXh; p_uin=o0123456;           p_skey=oNmCDeKR8b8rcOpkVPIzR9CAjjj7t-bUxsynqAkalWI_; "
-     // 需要修改 uin=o0你的QQ号 skey=自行cookie提取 p_uin=o0你的QQ号 p_skey=自行cookie提取 
-            </pre>
-            result(该项提取 <mark>header</mark> 里面的 <mark>set-cookie</mark> )
-            <pre>
-            'set-cookie': 'ldw=7841f781c7f0e7f7acbdd00d53a5f53fa5f0a63d40a0969d; Domain=id.qq.com; Path=/'
-            </pre>
-    </details>
-    </td>
-  
-  </tr>
-  <tr>
-  </tr>
+   
+
   <tr>
    <td>获取成长信息</td>
    <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
@@ -261,41 +306,8 @@
   <th>stage</th>
   </tr>
 	 <tr></tr>
-	 <tr>
-		 <td>get_join_k(k值)</td>
-		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
-		 <td>https://qun.qq.com/proxy/domain/admin.qun.qq.com/cgi-bin/qun_admin/get_join_k</td>
-		 <td><details><summary>例</summary>
-			 POST<pre>https://qun.qq.com/proxy/domain/admin.qun.qq.com/cgi-bin/qun_admin/get_join_k</pre>
-			 headers
-			 <pre>
- "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
- "Referer": "https://qun.qq.com/join.html",
- "Cookie": `uin=o114514; skey=MHcvBvCHdT; p_uin=o114514; p_skey=0yJENlMiruFp8XCoHvgi267qbg9j60o65N6gVrJm2Cs_;`,
-   // p_uin、uin=o你的QQ号 skey、p_skey自行提取
-			 </pre>
-			 data
-			 <pre>
-			 gc=114514114&bkn=714093860
-			 // gc QQ群号
-			 // bkn 获取bkn值
-			 </pre>
-			 result
-			 <pre>
-			 {"ec":0,"errcode":0,"em":"","k":"TemikiPyqA7GFiyMlGv4pC6gAfYIrIs"} //k值
-			 </pre>
-			 </details></td>
-	 </tr>
-  <tr>
-	 </tr>
-	 <tr>
-		 <td>getCSRFToken(使用<strong>cookie</strong> 的 <strong>skey</strong>手动算出<strong>bkn值</strong>)</td>
-		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
-		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/218/18/112/68/2021/10/15/04/21/76cb0a3a-5c39-493c-b104-9d56b194abe7.png"  /></td>
-		 <td><details><summary>例</summary></details></td>
-	 </tr>
-	 <tr>
-	 </tr>
+	 
+	 
   <tr>
    <td>获取群列表</td>
    <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
