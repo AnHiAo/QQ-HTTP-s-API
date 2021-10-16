@@ -2,6 +2,8 @@
 
 ## 更新模式
 佛系更新(不急也不慢)🙏
+## 分类问题
+因为你🐧的接口也是超级乱的,所以每个分类的话是按照实际的<strong>功能效果</strong>去分类而非按照接口的意义去分类
 ## 简介
 <p>嘛,如果你能发现到这里就说明你对作者还是有大大滴关注,那么如果在您使用的基础上觉得好用并且想 <strong>分享</strong>其他地方
 麻烦带上<strong>本仓库地址</strong><img src="https://pic.stackoverflow.wiki/uploadImages/58/152/85/120/2021/10/14/21/28/0b4f0ba0-ce29-4ef7-86a5-069862c25526.gif" /></p>
@@ -66,7 +68,7 @@
 </details>
 
 <details>
- <summary>id.qq.com → QQ个人中心<img src="https://pic.stackoverflow.wiki/uploadImages/2400/8902//f03c/92ff/fec3/ed69/2021/10/16/03/16/10934a21-4da7-4e7c-8125-c41cd1e84ac4.svg" width="33.3333vw" /></summary>
+ <summary>QQ个人操作相关<img src="https://pic.stackoverflow.wiki/uploadImages/2400/8902//f03c/92ff/fec3/ed69/2021/10/16/03/16/10934a21-4da7-4e7c-8125-c41cd1e84ac4.svg" width="33.3333vw" /></summary>
 
  <table>
  <tr>
@@ -104,7 +106,7 @@
   <tr>
   </tr>
   <tr>
-   <td>获取QQ成长信息</td>
+   <td>获取成长信息</td>
    <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
    <td>https://id.qq.com/cgi-bin/qqlevel?page_type=1&idw=(get_base_key提取出来的值)&r=随机小数(0-1)</td>
    <td>
@@ -209,6 +211,40 @@
        </details>
    </td>
   </tr>
+	 <tr></tr>
+  <tr>
+		 <td>获取好友信息列表</td>
+		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+		 <td>https://qun.qq.com/cgi-bin/qun_mgr/get_friend_list?&bkn=(bkn值)</td>
+		 <td><details><summary>例</summary>
+			 GET<pre>https://qun.qq.com/cgi-bin/qun_mgr/get_friend_list?&bkn=714093871</pre>
+			 headers
+			 <pre>
+ "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+ "Referer": "https://qun.qq.com/cgi-bin/qun_mgr/get_friend_list",
+ "Cookie": `uin=o114514; skey=MHcvBvCHdT; p_uin=o114514; p_skey=0yJENlMiruFp8XCoHvgi267qbg9j60o65N6gVrJm2Cs_;`,
+ // p_uin、uin=o你的QQ号 skey、p_skey自行提取
+			 </pre>
+			 result
+			 <pre>
+ {
+	"ec": 0,
+	"errcode": 0,
+	"em": "",
+	"result": {
+	    "0": {
+		"mems": [{  // name 昵称 uin QQ号
+			"name": "babyQ",
+			"uin": 66600000
+			}]
+			
+		}
+	}
+}
+			 </pre>
+	 </details>
+		 </td>
+	 </tr>
  </table>
  
     
@@ -216,7 +252,7 @@
  <br/>
 </details>
 <details>
- <summary>qun.qq.com → QQ群集合<img src="https://pic.stackoverflow.wiki/uploadImages/2400/8902//f03c/92ff/fec3/ed69/2021/10/16/03/10/f036e328-455c-4cf3-b3e9-4951e1a16b34.svg" width="33.3333vw" /></summary>
+ <summary>QQ群操作相关<img src="https://pic.stackoverflow.wiki/uploadImages/2400/8902//f03c/92ff/fec3/ed69/2021/10/16/03/10/f036e328-455c-4cf3-b3e9-4951e1a16b34.svg" width="33.3333vw" /></summary>
  <table>
   <tr>
   <th>name</th>
@@ -504,40 +540,6 @@
 }
 			 </pre>
 	         </details></td>
-	 </tr>
-	 <tr></tr>
-	 <tr>
-		 <td>获取个人好友信息列表</td>
-		 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
-		 <td>https://qun.qq.com/cgi-bin/qun_mgr/get_friend_list?&bkn=(bkn值)</td>
-		 <td><details><summary>例</summary>
-			 GET<pre>https://qun.qq.com/cgi-bin/qun_mgr/get_friend_list?&bkn=714093871</pre>
-			 headers
-			 <pre>
- "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
- "Referer": "https://qun.qq.com/cgi-bin/qun_mgr/get_friend_list",
- "Cookie": `uin=o114514; skey=MHcvBvCHdT; p_uin=o114514; p_skey=0yJENlMiruFp8XCoHvgi267qbg9j60o65N6gVrJm2Cs_;`,
- // p_uin、uin=o你的QQ号 skey、p_skey自行提取
-			 </pre>
-			 result
-			 <pre>
- {
-	"ec": 0,
-	"errcode": 0,
-	"em": "",
-	"result": {
-	    "0": {
-		"mems": [{  // name 昵称 uin QQ号
-			"name": "babyQ",
-			"uin": 66600000
-			}]
-			
-		}
-	}
-}
-			 </pre>
-	 </details>
-		 </td>
 	 </tr>
 	 <tr></tr>
 	 <tr>
