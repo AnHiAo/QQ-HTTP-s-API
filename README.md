@@ -290,7 +290,71 @@
 			 </pre>
 	 </details>
 		 </td>
-	 </tr>
+	 </tr><tr></tr><tr>
+	 <td>修改QQ个人头像</td>
+	 <td><img src="https://pic.stackoverflow.wiki/uploadImages/13/113/104/116/2021/09/05/10/20/3b2fa54f-03b9-4c5a-abcf-845149399700.svg" width="26.6666666vw"/></td>
+	 <td>https://cface.qq.com/cgi-bin/cface/upload4</td>
+	 <td>
+		 <details>
+			 <summary>例</summary>
+			 POST<pre>https://cface.qq.com/cgi-bin/cface/upload4</pre>
+			 headers(<strong>需要form-data形式</strong>)
+			 <pre>
+"Content-Type": "multipart/form-data; boundary=arkPTRBPLVRFLDVRJBTPHDZ",
+"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+"Referer": "https://cface.qq.com/cgi-bin/cface/upload4",
+"Cookie": `uin=o0123456; skey=@NYPUcpjXh; RK=xcDMmgj+OJ; p_uin=o0123456; p_skey=oNmCDeKR8b8rcOpkVPIzR9CAjjj7t-bUxsynqAkalWI_;ldw=c8cf578ba618815d667dc29e9d9e77459c037f69543f62fb;`
+			 </pre>
+			 data
+			 <pre>
+			 arkPTRBPLVRFLDVRJBTPHDZ
+Content-Disposition: form-data; name="clientuin"
+
+123456
+--arkPTRBPLVRFLDVRJBTPHDZ
+Content-Disposition: form-data; name="clientkey"
+
+CB71C2797A40053C2E4B52263060F4DB85C8744B96650DEED823D4E397FE8653
+--arkPTRBPLVRFLDVRJBTPHDZ
+Content-Disposition: form-data; name="sign"
+
+F6F208DAC03662DBA93374163E6B2D53195346192196599FF42D73AE450D326BD5E5C11788DDA9E1305FF36B77836119
+--arkPTRBPLVRFLDVRJBTPHDZ
+Content-Disposition: form-data; name="usertype"
+
+1
+--arkPTRBPLVRFLDVRJBTPHDZ
+Content-Disposition: form-data; name="filetype"
+
+3
+--arkPTRBPLVRFLDVRJBTPHDZ
+Content-Disposition: form-data; name="imagetype"
+
+6
+--arkPTRBPLVRFLDVRJBTPHDZ
+Content-Disposition: form-data; name="Localeid"
+
+2052
+--arkPTRBPLVRFLDVRJBTPHDZ
+Content-Disposition: form-data; name="CldVer"
+
+5743
+--------arkPTRBPLVRFLDVRJBTPHDZ
+Content-Disposition: form-data; name="sourceid"
+
+0
+--------arkPTRBPLVRFLDVRJBTPHDZ
+Content-Disposition: form-data; name="customfacefile"; filename="filename"
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+...文件进制流</pre></pre>
+		 <pre>
+  200
+ http://219.133.38.138/data/0/0000000000000000
+		  </pre>
+		 </details>
+	 </td>
+	</tr>
  </table>
  
     
